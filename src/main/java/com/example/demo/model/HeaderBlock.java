@@ -1,11 +1,19 @@
 package com.example.demo.model;
 
 public class HeaderBlock {
-    String blockChainId;
-    int height;
-    int fee;
-    long time;
-    String previousHash;
+    public String blockChainId;
+    public int height;
+    public int fee;
+    public long time;
+    public String previousHash;
+
+    public HeaderBlock(InitialBlockData initialBlockData) {
+        this.blockChainId = initialBlockData.getId();
+        this.height = 0;
+        this.fee = initialBlockData.getFee();
+        this.time = System.currentTimeMillis();
+        this.previousHash = "";
+    }
 
     public HeaderBlock(String blockChainId, int height, int fee, long time, String previousHash) {
         this.blockChainId = blockChainId;
